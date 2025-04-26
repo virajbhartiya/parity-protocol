@@ -9,7 +9,7 @@
 
 Parity Protocol is a cutting-edge distributed computation network that enables secure and verifiable task execution across verified nodes. Built and maintained by Blit Labs, this protocol offers a cloudless architecture that prioritizes security, reliability, and efficient resource utilization.
 
-📚 [Read the Complete Documentation](https://blitlabs.com/docs)
+📚 [Read the Complete Documentation](https://blitlabs.xyz/docs)
 
 ## System Architecture
 
