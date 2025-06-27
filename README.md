@@ -71,17 +71,28 @@ We transformed Parity Protocol into a comprehensive **AI and ML platform** by ad
 
 📖 [**FL Rewards System**](documentation/FL_REWARDS_SYSTEM.md)
 
+### 📜 **Smart Contracts**
+
+- **Reputation Management**: On-chain reputation scoring and tracking
+- **Automated Slashing**: Smart contract-based penalty enforcement
+- **Staking Requirements**: Minimum stake requirements for participation
+- **Peer Monitoring Rewards**: Economic incentives for quality monitoring
+- **Transparent Governance**: Decentralized quality control mechanisms
+
+📖 [**Reputation Contracts Repository**](https://github.com/virajbhartiya/parity-reputation-contracts)
+
 ## 🏗️ System Architecture
 
 ### Core Components (Pre-Existing)
 
-| Component            | Repository                                                                | Purpose                           |
-| -------------------- | ------------------------------------------------------------------------- | --------------------------------- |
-| 🖥️ **parity-server** | [theblitlabs/parity-server](https://github.com/theblitlabs/parity-server) | Task orchestration and validation |
-| 🏃 **parity-runner** | [theblitlabs/parity-runner](https://github.com/theblitlabs/parity-runner) | Secure task execution in Docker   |
-| 🔌 **parity-client** | [theblitlabs/parity-client](https://github.com/theblitlabs/parity-client) | Task submission and monitoring    |
-| 💎 **parity-token**  | [theblitlabs/parity-token](https://github.com/theblitlabs/parity-token)   | ERC20 token and economics         |
-| 👛 **parity-wallet** | [theblitlabs/parity-wallet](https://github.com/theblitlabs/parity-wallet) | Secure token management           |
+| Component                          | Repository                                                                                                | Purpose                           |
+| ---------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| 🖥️ **parity-server**               | [virajbhartiya/parity-server](https://github.com/virajbhartiya/parity-server)                             | Task orchestration and validation |
+| 🏃 **parity-runner**               | [virajbhartiya/parity-runner](https://github.com/virajbhartiya/parity-runner)                             | Secure task execution in Docker   |
+| 🔌 **parity-client**               | [virajbhartiya/parity-client](https://github.com/virajbhartiya/parity-client)                             | Task submission and monitoring    |
+| 💎 **parity-token**                | [theblitlabs/parity-token](https://github.com/theblitlabs/parity-token)                                   | ERC20 token and economics         |
+| 👛 **parity-wallet**               | [theblitlabs/parity-wallet](https://github.com/theblitlabs/parity-wallet)                                 | Secure token management           |
+| 📜 **parity-reputation-contracts** | [virajbhartiya/parity-reputation-contracts](https://github.com/virajbhartiya/parity-reputation-contracts) | Smart contracts for reputation    |
 
 ### New Features Added
 
@@ -102,6 +113,8 @@ graph TB
 
     Rep --> Monitor[Peer Monitoring]
     Monitor --> Slash[Auto Slashing]
+    Rep --> SmartContract[Reputation Contracts]
+    SmartContract --> Staking[Staking & Slashing]
 
     subgraph "New Hackathon Features"
         FL
@@ -112,6 +125,8 @@ graph TB
         Ollama2
         Monitor
         Slash
+        SmartContract
+        Staking
     end
 ```
 
