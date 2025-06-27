@@ -10,10 +10,6 @@
 
 **Parity Protocol** is a cutting-edge distributed computation network that enables secure and verifiable task execution across verified nodes. Originally built as a foundational distributed compute platform, **we have significantly enhanced it during the hackathon** with advanced federated learning capabilities, LLM inference services, reputation-based monitoring, and IPFS/Filecoin distributed storage.
 
-🔗 **Component Documentation**: [parity-protocol/README.md](parity-protocol/README.md)
-
-📚 **Complete Documentation**: [Documentation Directory](documentation/)
-
 ## 🎯 What Was Already There (Pre-Hackathon)
 
 The **foundational Parity Protocol infrastructure** was already established and included:
@@ -249,11 +245,11 @@ We welcome contributions to both the **original Parity Protocol infrastructure**
 
 During the hackathon, we successfully transformed Parity Protocol from a general distributed compute platform into a **comprehensive AI infrastructure** with:
 
-✅ **Full Federated Learning Pipeline** - From data upload to model training
-✅ **Production LLM Network** - Real distributed inference capabilities  
-✅ **Automated Quality Control** - Peer monitoring and reputation management
-✅ **Decentralized Storage** - IPFS/Filecoin integration for data persistence
-✅ **Real Economic Incentives** - USDFC token rewards for AI contributions
+- **Full Federated Learning Pipeline** - From data upload to model training
+- **Production LLM Network** - Real distributed inference capabilities
+- **Automated Quality Control** - Peer monitoring and reputation management
+- **Decentralized Storage** - IPFS/Filecoin integration for data persistence
+- **Real Economic Incentives** - USDFC token rewards for AI contributions
 
 **The result**: A production-ready platform for privacy-preserving AI that combines the best of decentralized compute, federated learning, and token economics.
 
