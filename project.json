@@ -1,0 +1,23 @@
+{
+  "name": "Parity Protocol",
+  "tagline": "Decentralized AI Infrastructure for Distributed Task Execution, Federated Learning, and LLM Inference",
+  "description": "Parity Protocol is a comprehensive decentralized AI infrastructure platform that enables distributed execution of AI tasks including LLM inference, computer vision, and federated learning. The platform features a three-component architecture: Parity Server for task orchestration and runner management, Parity Runner for secure AI task execution with Docker sandboxing and Ollama integration, and Parity Client for distributed federated learning coordination. Built with blockchain integration for reputation systems and rewards, the platform provides scalable, secure, and decentralized AI compute resources with comprehensive monitoring, quality control, and task queuing systems.",
+  "team": [
+    {
+      "name": "Viraj Bhartiya",
+      "email": "vlbhartiya@gmail.com"
+    }
+  ],
+  "demo_url": "https://github.com/virajbhartiya/parity-protocol",
+  "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "technologies": [
+    "Go",
+    "Docker",
+    "Ollama",
+    "Filecoin",
+    "Federated Learning",
+    "LLM Infrastructure",
+    "Blockchain",
+    "Distributed Systems"
+  ]
+}
