@@ -6,18 +6,106 @@
 [![Filecoin](https://img.shields.io/badge/Filecoin-Calibration-0090FF?style=flat-square&logo=filecoin)](https://filecoin.io/)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 
-## 🚀 Introduction
-
-**Parity Protocol** is a cutting-edge distributed computation network that enables secure and verifiable task execution across verified nodes. Originally built as a foundational distributed compute platform, **we have significantly enhanced it during the hackathon** with advanced federated learning capabilities, LLM inference services, reputation-based monitoring, and IPFS/Filecoin distributed storage.
-
-> **⚡ IMPORTANT**: This repository contains high-level documentation and system overview. **For actual implementation, source code, and detailed setup instructions, visit the individual component repositories:**
+> **IMPLEMENTATION REPOSITORIES**: This repository contains high-level documentation and system overview. **For actual implementation, source code, and detailed setup instructions, visit the individual component repositories:**
 >
-> - 🖥️ **[parity-server](https://github.com/virajbhartiya/parity-server)** - Task orchestration, federated learning coordination, and APIs
-> - 🏃 **[parity-runner](https://github.com/virajbhartiya/parity-runner)** - Secure task execution, Docker sandboxing, and Ollama LLM hosting
-> - 🔌 **[parity-client](https://github.com/virajbhartiya/parity-client)** - CLI tools, federated learning commands, and task submission
-> - 📜 **[parity-reputation-contracts](https://github.com/virajbhartiya/parity-reputation-contracts)** - Smart contracts for reputation and staking
+> - **[parity-server](https://github.com/virajbhartiya/parity-server)** - Task orchestration, federated learning coordination, and APIs
+> - **[parity-runner](https://github.com/virajbhartiya/parity-runner)** - Secure task execution, Docker sandboxing, and Ollama LLM hosting
+> - **[parity-client](https://github.com/virajbhartiya/parity-client)** - CLI tools, federated learning commands, and task submission
+> - **[parity-reputation-contracts](https://github.com/virajbhartiya/parity-reputation-contracts)** - Smart contracts for reputation and staking
 
-## 🎯 What Was Already There (Pre-Hackathon)
+## What is Parity Protocol?
+
+**Parity Protocol** is a **decentralized AI infrastructure platform** that enables organizations and individuals to run AI workloads (federated learning, LLM inference, computer vision) across a distributed network of verified compute nodes - **without sacrificing data privacy or paying centralized cloud providers**.
+
+### The Problem We Solve
+
+**Traditional AI infrastructure has critical limitations:**
+
+- **Centralized Control**: Big Tech controls AI compute (AWS, Google Cloud, Azure)
+- **High Costs**: Enterprise AI workloads cost thousands per month
+- **Data Privacy**: Sensitive data must leave your organization
+- **Censorship Risk**: Centralized providers can restrict or ban AI usage
+- **Limited Access**: GPU shortages and waitlists for advanced models
+
+### Our Solution: Decentralized AI Infrastructure
+
+**Parity Protocol creates a global network where:**
+
+- **Anyone can contribute compute** - Monetize your unused GPUs and CPUs
+- **Privacy-first AI training** - Train models without sharing raw data (federated learning)
+- **Lower costs** - Competitive pricing through decentralized competition
+- **Censorship resistance** - No single point of control or failure
+- **Multiple AI services** - LLM inference, federated learning, computer vision
+- **Quality guaranteed** - Blockchain-based reputation and staking system
+
+## Real-World Use Cases
+
+### Healthcare: Privacy-Preserving Medical AI
+
+- Train diagnostic models across hospitals without sharing patient data
+- Comply with HIPAA while improving AI accuracy through collaboration
+- **Example**: Multi-hospital cancer detection model without data leaving premises
+
+### Finance: Collaborative Fraud Detection
+
+- Banks train fraud models together without sharing transaction data
+- Improve detection rates while maintaining competitive privacy
+- **Example**: Global fraud patterns detected across institutions
+
+### Distributed LLM Hosting
+
+- Host and monetize large language models on your hardware
+- Access diverse models without vendor lock-in
+- **Example**: Run Llama, Mistral, CodeLlama across the network
+
+### Enterprise AI
+
+- Reduce AI compute costs by 60-80% vs traditional cloud
+- Maintain data sovereignty and compliance
+- **Example**: Manufacturing quality control models trained federally
+
+## How It Works
+
+```mermaid
+graph TB
+    User[Data Scientists/Enterprises] --> Client[parity-client]
+    Client --> Server[parity-server<br/>Orchestration Layer]
+
+    Server --> Runner1[parity-runner<br/>Node 1: GPU Provider]
+    Server --> Runner2[parity-runner<br/>Node 2: CPU Provider]
+    Server --> Runner3[parity-runner<br/>Node N: Hybrid Provider]
+
+    Server --> FL[Federated Learning<br/>Coordinator]
+    Server --> LLM[LLM Request<br/>Load Balancer]
+    Server --> Rep[Reputation<br/>Monitor]
+
+    FL --> Privacy[Privacy-Preserving<br/>Aggregation]
+    Runner1 --> Models1[Ollama Models<br/>Llama, Mistral]
+    Runner2 --> Models2[Custom Models<br/>Computer Vision]
+    Runner3 --> Models3[Training Jobs<br/>Neural Networks]
+
+    Rep --> Blockchain[Filecoin Network<br/>Reputation & Rewards]
+    Privacy --> IPFS[IPFS Storage<br/>Model Updates]
+
+    style User fill:#e1f5fe
+    style Blockchain fill:#f3e5f5
+    style Privacy fill:#e8f5e8
+```
+
+### The Process
+
+1. **Submit Task**: Data scientists submit AI tasks via `parity-client`
+2. **Orchestration**: `parity-server` finds optimal compute nodes
+3. **Execution**: `parity-runner` nodes execute tasks in secure Docker containers
+4. **Privacy**: Federated learning keeps data local, only shares model updates
+5. **Rewards**: Blockchain automatically pays compute providers in USDFC tokens
+6. **Quality**: Peer monitoring ensures reliability and punishes bad actors
+
+## Evolution: From Distributed Compute to AI Infrastructure
+
+Originally built as a foundational distributed compute platform, **we have significantly enhanced Parity Protocol during the hackathon** to become a comprehensive AI infrastructure platform, adding advanced federated learning capabilities, LLM inference services, reputation-based monitoring, and IPFS/Filecoin distributed storage.
+
+## Foundation (Pre-Hackathon)
 
 The **foundational Parity Protocol infrastructure** was already established and included:
 
@@ -27,11 +115,11 @@ The **foundational Parity Protocol infrastructure** was already established and 
 - ✅ **Wallet Infrastructure**: Secure token management and transfers
 - ✅ **Core APIs**: RESTful interfaces for task submission and monitoring
 
-## 🆕 What We Added During Hackathon
+## What We Added During Hackathon
 
 We transformed Parity Protocol into a comprehensive **AI and ML platform** by adding:
 
-### 🤖 **Federated Learning System**
+### Federated Learning System
 
 - **Privacy-Preserving ML**: Train models without centralizing data
 - **Multiple Aggregation Methods**: FedAvg, FedProx, and custom algorithms
@@ -39,9 +127,9 @@ We transformed Parity Protocol into a comprehensive **AI and ML platform** by ad
 - **Differential Privacy**: Advanced privacy protection mechanisms
 - **Real-time Coordination**: Distributed training across multiple runners
 
-📖 [**Federated Learning Guide**](documentation/FEDERATED_LEARNING_GUIDE.md)
+[**Federated Learning Guide**](documentation/FEDERATED_LEARNING_GUIDE.md)
 
-### 🧠 **LLM Inference Network**
+### LLM Inference Network
 
 - **Distributed AI**: Ollama-powered LLM hosting across runners
 - **Model Discovery**: Automatic detection of available models
@@ -49,36 +137,36 @@ We transformed Parity Protocol into a comprehensive **AI and ML platform** by ad
 - **Usage Analytics**: Comprehensive billing and metrics
 - **Multi-Model Support**: Llama, Mistral, CodeLlama, and more
 
-📖 [**LLM Models Guide**](documentation/LLM_MODELS_GUIDE.md)
+[**LLM Models Guide**](documentation/LLM_MODELS_GUIDE.md)
 
-### 🛡️ **Reputation & Monitoring System**
+### Reputation & Monitoring System
 
 - **Peer-to-Peer Monitoring**: Runners monitor each other for quality
 - **Automatic Slashing**: Bad actors lose staked tokens
 - **Quality Metrics**: Performance and reliability scoring
 - **Malicious Behavior Detection**: Advanced anomaly detection
 
-📖 [**FL Infrastructure Quality**](documentation/FL_INFRASTRUCTURE_QUALITY.md)
+[**FL Infrastructure Quality**](documentation/FL_INFRASTRUCTURE_QUALITY.md)
 
-### 📁 **IPFS/Filecoin Storage**
+### IPFS/Filecoin Storage
 
 - **Distributed Data**: Decentralized storage for training datasets
 - **Content Addressing**: Immutable data references via CIDs
 - **Upload/Download**: Seamless integration with FL workflows
 - **Storage Economics**: Filecoin-based data persistence
 
-📖 [**Data Partitioning Guide**](documentation/DATA_PARTITIONING_GUIDE.md)
+[**Data Partitioning Guide**](documentation/DATA_PARTITIONING_GUIDE.md)
 
-### 💰 **Enhanced Economics**
+### Enhanced Economics
 
 - **USDFC Rewards**: Real blockchain payments for ML contributions
 - **FL-Specific Incentives**: Rewards based on data quality and participation
 - **Performance Bonuses**: Higher rewards for better contributions
 - **Session Completion Bonuses**: Long-term participation incentives
 
-📖 [**FL Rewards System**](documentation/FL_REWARDS_SYSTEM.md)
+[**FL Rewards System**](documentation/FL_REWARDS_SYSTEM.md)
 
-### 📜 **Smart Contracts**
+### Smart Contracts
 
 - **Reputation Management**: On-chain reputation scoring and tracking
 - **Automated Slashing**: Smart contract-based penalty enforcement
@@ -86,22 +174,22 @@ We transformed Parity Protocol into a comprehensive **AI and ML platform** by ad
 - **Peer Monitoring Rewards**: Economic incentives for quality monitoring
 - **Transparent Governance**: Decentralized quality control mechanisms
 
-📖 [**Reputation Contracts Repository**](https://github.com/virajbhartiya/parity-reputation-contracts)
+[**Reputation Contracts Repository**](https://github.com/virajbhartiya/parity-reputation-contracts)
 
-## 🏗️ System Architecture
+## System Architecture
 
 ### Core Components (Pre-Existing)
 
-| Component                          | Repository                                                                                                | Purpose                           |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------- |
-| 🖥️ **parity-server**               | [virajbhartiya/parity-server](https://github.com/virajbhartiya/parity-server)                             | Task orchestration and validation |
-| 🏃 **parity-runner**               | [virajbhartiya/parity-runner](https://github.com/virajbhartiya/parity-runner)                             | Secure task execution in Docker   |
-| 🔌 **parity-client**               | [virajbhartiya/parity-client](https://github.com/virajbhartiya/parity-client)                             | Task submission and monitoring    |
-| 💎 **parity-token**                | [theblitlabs/parity-token](https://github.com/theblitlabs/parity-token)                                   | ERC20 token and economics         |
-| 👛 **parity-wallet**               | [virajbhartiya/parity-wallet](https://github.com/virajbhartiya/parity-wallet)                             | Secure token management           |
-| 📜 **parity-reputation-contracts** | [virajbhartiya/parity-reputation-contracts](https://github.com/virajbhartiya/parity-reputation-contracts) | Smart contracts for reputation    |
+| Component                       | Repository                                                                                                | Purpose                           |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| **parity-server**               | [virajbhartiya/parity-server](https://github.com/virajbhartiya/parity-server)                             | Task orchestration and validation |
+| **parity-runner**               | [virajbhartiya/parity-runner](https://github.com/virajbhartiya/parity-runner)                             | Secure task execution in Docker   |
+| **parity-client**               | [virajbhartiya/parity-client](https://github.com/virajbhartiya/parity-client)                             | Task submission and monitoring    |
+| **parity-token**                | [theblitlabs/parity-token](https://github.com/theblitlabs/parity-token)                                   | ERC20 token and economics         |
+| **parity-wallet**               | [virajbhartiya/parity-wallet](https://github.com/virajbhartiya/parity-wallet)                             | Secure token management           |
+| **parity-reputation-contracts** | [virajbhartiya/parity-reputation-contracts](https://github.com/virajbhartiya/parity-reputation-contracts) | Smart contracts for reputation    |
 
-> **📂 View Implementation Details**: This repository contains the high-level documentation and overview. **To see the actual implementation, code, and detailed setup instructions, please visit the individual component repositories linked above.** Each repository contains:
+> **View Implementation Details**: This repository contains the high-level documentation and overview. **To see the actual implementation, code, and detailed setup instructions, please visit the individual component repositories linked above.** Each repository contains:
 >
 > - Complete source code and implementation
 > - Detailed README with setup instructions
@@ -144,83 +232,84 @@ graph TB
     end
 ```
 
-## 🚀 Quick Start
+## Get Started
 
-### Prerequisites
+### For End Users (Data Scientists, Enterprises)
 
-- **Go 1.22.7+**
-- **PostgreSQL 14.0+**
-- **Docker** with Docker Compose
-- **Ollama** (for LLM inference)
-- **USDFC tokens** on Filecoin Calibration Network
+**Want to run AI workloads on the network?**
 
-### 1. Clone and Setup
+1. **Get tokens**: Acquire USDFC tokens on Filecoin Calibration Network
+2. **Install client**: Download [parity-client](https://github.com/virajbhartiya/parity-client)
+3. **Submit tasks**: Use CLI to submit LLM inference or federated learning jobs
+4. **Monitor progress**: Track task execution and costs in real-time
 
-```bash
-# Clone the main repository
-git clone https://github.com/your-org/parity-protocol.git
-cd parity-protocol
+### For Node Operators (Compute Providers)
 
-# Setup individual components (see parity-protocol/README.md for details)
-```
+**Want to monetize your compute resources?**
 
-> **🔗 Important**: This repository provides documentation and overview only. **For complete setup instructions, implementation details, and running the services, you must visit each individual component repository:**
+1. **Set up runner**: Install [parity-runner](https://github.com/virajbhartiya/parity-runner)
+2. **Stake tokens**: Stake USDFC tokens to participate in the network
+3. **Install Ollama**: Set up LLM models for inference requests
+4. **Earn rewards**: Get paid automatically for successful task completion
+
+### For Developers (Integration & Extensions)
+
+**Want to integrate or extend the platform?**
+
+1. **Study architecture**: Review component documentation and APIs
+2. **Set up development**: Clone [parity-server](https://github.com/virajbhartiya/parity-server) for core orchestration
+3. **Build features**: Extend federated learning algorithms or add new model types
+4. **Test integration**: Use local development setup for testing
+
+> **COMPLETE SETUP INSTRUCTIONS**: This repository provides the high-level overview. **For detailed setup, installation guides, and running instructions, visit each component repository:**
 >
-> - **Server Implementation**: [virajbhartiya/parity-server](https://github.com/virajbhartiya/parity-server) - Complete server setup and APIs
-> - **Runner Implementation**: [virajbhartiya/parity-runner](https://github.com/virajbhartiya/parity-runner) - Docker execution and Ollama integration
-> - **Client Implementation**: [virajbhartiya/parity-client](https://github.com/virajbhartiya/parity-client) - CLI tools and federated learning commands
+> - **[parity-server](https://github.com/virajbhartiya/parity-server)** - Core orchestration, APIs, setup instructions
+> - **[parity-runner](https://github.com/virajbhartiya/parity-runner)** - Node setup, Docker configuration, Ollama integration
+> - **[parity-client](https://github.com/virajbhartiya/parity-client)** - CLI installation, usage examples, commands
+> - **[parity-reputation-contracts](https://github.com/virajbhartiya/parity-reputation-contracts)** - Smart contract deployment
 
-### 2. Start Core Services
+### Quick Demo Commands
 
-```bash
-# Start server (with new FL and LLM capabilities)
-cd parity-server
-./parity-server server
-
-# Start runner (with FL training and LLM hosting)
-cd parity-runner
-./parity-runner runner
-
-# Start Ollama for LLM inference
-ollama serve
-```
-
-### 3. Try New Features
+Once you have the components set up, try these examples:
 
 ```bash
 # Submit LLM inference request
-./parity-client llm submit --prompt "Explain quantum computing" --model "llama2"
+./parity-client llm submit \
+  --prompt "Explain quantum computing in simple terms" \
+  --model "llama2"
 
 # Create federated learning session
-./parity-client fl create-session-with-data ./dataset.csv \
-  --name "Image Classification" \
+./parity-client fl create-session-with-data ./healthcare_data.csv \
+  --name "Privacy-Preserving Diagnosis" \
   --model-type neural_network \
-  --total-rounds 5
+  --total-rounds 10 \
+  --privacy-level high
 
-# Check reputation status
+# Check your node reputation and earnings
 ./parity-client reputation status
+./parity-client wallet balance
 ```
 
-## 📚 Documentation
+## Documentation
 
 ### User Guides
 
-- 🤖 [**Federated Learning Guide**](documentation/FEDERATED_LEARNING_GUIDE.md) - Complete FL user manual
-- 🧠 [**LLM Models Guide**](documentation/LLM_MODELS_GUIDE.md) - LLM inference and hosting
-- 📊 [**Data Partitioning Guide**](documentation/DATA_PARTITIONING_GUIDE.md) - Data distribution strategies
+- [**Federated Learning Guide**](documentation/FEDERATED_LEARNING_GUIDE.md) - Complete FL user manual
+- [**LLM Models Guide**](documentation/LLM_MODELS_GUIDE.md) - LLM inference and hosting
+- [**Data Partitioning Guide**](documentation/DATA_PARTITIONING_GUIDE.md) - Data distribution strategies
 
 ### Operations & Infrastructure
 
-- 🚀 [**Deployment Guide**](documentation/DEPLOYMENT_GUIDE.md) - Complete system deployment
-- 💰 [**FL Rewards System**](documentation/FL_REWARDS_SYSTEM.md) - Economic incentives
-- 🏗️ [**FL Infrastructure Quality**](documentation/FL_INFRASTRUCTURE_QUALITY.md) - Quality framework
+- [**Deployment Guide**](documentation/DEPLOYMENT_GUIDE.md) - Complete system deployment
+- [**FL Rewards System**](documentation/FL_REWARDS_SYSTEM.md) - Economic incentives
+- [**FL Infrastructure Quality**](documentation/FL_INFRASTRUCTURE_QUALITY.md) - Quality framework
 
 ### Component Documentation
 
-- 📖 [**Parity Protocol Core**](parity-protocol/README.md) - Original system documentation
-- 🔗 Individual component READMEs in respective repositories
+- [**Parity Protocol Core**](parity-protocol/README.md) - Original system documentation
+- Individual component READMEs in respective repositories
 
-## 🎮 Use Cases
+## Use Cases
 
 ### Federated Learning
 
@@ -242,7 +331,7 @@ ollama serve
 - **Quality Assurance**: Continuous monitoring of participant performance
 - **Trust Building**: Transparent reputation system for all participants
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions to both the **original Parity Protocol infrastructure** and the **new hackathon features**!
 
@@ -268,7 +357,7 @@ We welcome contributions to both the **original Parity Protocol infrastructure**
 3. **Follow Guidelines**: Use [Conventional Commits](https://www.conventionalcommits.org/)
 4. **Test Thoroughly**: Ensure both original and new features work
 
-## 📊 Network Stats
+## Network Stats
 
 - **Blockchain**: Filecoin Calibration Network
 - **Token**: USDFC (ERC-20)
@@ -276,7 +365,7 @@ We welcome contributions to both the **original Parity Protocol infrastructure**
 - **Privacy**: Differential privacy for FL
 - **Models**: 20+ supported LLM models via Ollama
 
-## 🏆 Hackathon Achievements
+## Hackathon Achievements
 
 During the hackathon, we successfully transformed Parity Protocol from a general distributed compute platform into a **comprehensive AI infrastructure** with:
 
@@ -288,6 +377,45 @@ During the hackathon, we successfully transformed Parity Protocol from a general
 
 **The result**: A production-ready platform for privacy-preserving AI that combines the best of decentralized compute, federated learning, and token economics.
 
+## Vision: Democratizing AI Infrastructure
+
+### The Future We're Building
+
+**Parity Protocol isn't just a hackathon project** - it's a foundational piece of the decentralized AI future:
+
+- **AI Independence**: Breaking Big Tech's monopoly on AI compute and data
+- **Privacy-First AI**: Training powerful models without compromising data privacy
+- **Fair Economics**: Compute providers earn fair rewards, users pay fair prices
+- **Global Access**: Anyone, anywhere can participate in and benefit from AI progress
+- **Censorship Resistance**: No central authority can restrict AI access or development
+
+### Impact Potential
+
+With Parity Protocol, we envision a world where:
+
+- **Hospitals collaborate** on life-saving AI models without sharing patient data
+- **Financial institutions** jointly fight fraud while maintaining competitive advantage
+- **Developing nations** access cutting-edge AI without expensive infrastructure
+- **Researchers everywhere** contribute to and benefit from AI breakthroughs
+- **Innovation flourishes** without platform restrictions or vendor lock-in
+
+### Join the Movement
+
+Every line of code, every node operator, every researcher using privacy-preserving federated learning brings us closer to **truly decentralized AI infrastructure**.
+
+**Whether you're:**
+
+- A **developer** wanting to build the future of AI
+- An **enterprise** seeking privacy-compliant AI solutions
+- A **researcher** pushing the boundaries of federated learning
+- An **entrepreneur** monetizing compute resources
+- A **visionary** believing in decentralized technology
+
+**You have a place in the Parity Protocol ecosystem.**
+
 ---
 
-🚀 **Ready to build the future of distributed AI?** Start with our [Deployment Guide](documentation/DEPLOYMENT_GUIDE.md)!
+**Ready to build the future of distributed AI?** Start with our [Deployment Guide](documentation/DEPLOYMENT_GUIDE.md)!
+
+[![Discord](https://img.shields.io/badge/Discord-Join%20Community-7289da?style=for-the-badge&logo=discord)](https://discord.gg/parity-protocol)
+[![Twitter](https://img.shields.io/badge/Twitter-Follow%20Updates-1da1f2?style=for-the-badge&logo=twitter)](https://twitter.com/parity_protocol)
