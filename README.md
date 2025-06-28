@@ -416,6 +416,3 @@ Every line of code, every node operator, every researcher using privacy-preservi
 ---
 
 **Ready to build the future of distributed AI?** Start with our [Deployment Guide](documentation/DEPLOYMENT_GUIDE.md)!
-
-[![Discord](https://img.shields.io/badge/Discord-Join%20Community-7289da?style=for-the-badge&logo=discord)](https://discord.gg/parity-protocol)
-[![Twitter](https://img.shields.io/badge/Twitter-Follow%20Updates-1da1f2?style=for-the-badge&logo=twitter)](https://twitter.com/parity_protocol)
