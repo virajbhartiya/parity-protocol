@@ -10,6 +10,13 @@
 
 **Parity Protocol** is a cutting-edge distributed computation network that enables secure and verifiable task execution across verified nodes. Originally built as a foundational distributed compute platform, **we have significantly enhanced it during the hackathon** with advanced federated learning capabilities, LLM inference services, reputation-based monitoring, and IPFS/Filecoin distributed storage.
 
+> **⚡ IMPORTANT**: This repository contains high-level documentation and system overview. **For actual implementation, source code, and detailed setup instructions, visit the individual component repositories:**
+>
+> - 🖥️ **[parity-server](https://github.com/virajbhartiya/parity-server)** - Task orchestration, federated learning coordination, and APIs
+> - 🏃 **[parity-runner](https://github.com/virajbhartiya/parity-runner)** - Secure task execution, Docker sandboxing, and Ollama LLM hosting
+> - 🔌 **[parity-client](https://github.com/virajbhartiya/parity-client)** - CLI tools, federated learning commands, and task submission
+> - 📜 **[parity-reputation-contracts](https://github.com/virajbhartiya/parity-reputation-contracts)** - Smart contracts for reputation and staking
+
 ## 🎯 What Was Already There (Pre-Hackathon)
 
 The **foundational Parity Protocol infrastructure** was already established and included:
@@ -91,8 +98,15 @@ We transformed Parity Protocol into a comprehensive **AI and ML platform** by ad
 | 🏃 **parity-runner**               | [virajbhartiya/parity-runner](https://github.com/virajbhartiya/parity-runner)                             | Secure task execution in Docker   |
 | 🔌 **parity-client**               | [virajbhartiya/parity-client](https://github.com/virajbhartiya/parity-client)                             | Task submission and monitoring    |
 | 💎 **parity-token**                | [theblitlabs/parity-token](https://github.com/theblitlabs/parity-token)                                   | ERC20 token and economics         |
-| 👛 **parity-wallet**               | [theblitlabs/parity-wallet](https://github.com/theblitlabs/parity-wallet)                                 | Secure token management           |
+| 👛 **parity-wallet**               | [virajbhartiya/parity-wallet](https://github.com/virajbhartiya/parity-wallet)                             | Secure token management           |
 | 📜 **parity-reputation-contracts** | [virajbhartiya/parity-reputation-contracts](https://github.com/virajbhartiya/parity-reputation-contracts) | Smart contracts for reputation    |
+
+> **📂 View Implementation Details**: This repository contains the high-level documentation and overview. **To see the actual implementation, code, and detailed setup instructions, please visit the individual component repositories linked above.** Each repository contains:
+>
+> - Complete source code and implementation
+> - Detailed README with setup instructions
+> - API documentation and examples
+> - Component-specific configuration guides
 
 ### New Features Added
 
@@ -149,6 +163,12 @@ cd parity-protocol
 
 # Setup individual components (see parity-protocol/README.md for details)
 ```
+
+> **🔗 Important**: This repository provides documentation and overview only. **For complete setup instructions, implementation details, and running the services, you must visit each individual component repository:**
+>
+> - **Server Implementation**: [virajbhartiya/parity-server](https://github.com/virajbhartiya/parity-server) - Complete server setup and APIs
+> - **Runner Implementation**: [virajbhartiya/parity-runner](https://github.com/virajbhartiya/parity-runner) - Docker execution and Ollama integration
+> - **Client Implementation**: [virajbhartiya/parity-client](https://github.com/virajbhartiya/parity-client) - CLI tools and federated learning commands
 
 ### 2. Start Core Services
 
