@@ -122,8 +122,16 @@ We transformed Parity Protocol into a comprehensive **AI and ML platform** by ad
 ### Federated Learning System
 
 - **Privacy-Preserving ML**: Train models without centralizing data
+- **Multiple ML Algorithms**: Neural networks, linear regression, and distributed random forest
+- **Distributed Random Forest**: Complete random forest implementation with federated learning support
+  - Bootstrap sampling with configurable subsample ratios
+  - Random feature selection for variance reduction
+  - Out-of-bag scoring for model validation
+  - Privacy-preserving model aggregation across nodes
+  - Feature importance calculation and tracking
 - **Multiple Aggregation Methods**: FedAvg, FedProx, and custom algorithms
 - **Data Partitioning**: Non-IID, label skew, and stratified distribution
+- **IPFS Integration**: Mandatory IPFS storage for all datasets with CID-based access
 - **Differential Privacy**: Advanced privacy protection mechanisms
 - **Real-time Coordination**: Distributed training across multiple runners
 
@@ -278,11 +286,18 @@ Once you have the components set up, try these examples:
   --prompt "Explain quantum computing in simple terms" \
   --model "llama2"
 
-# Create federated learning session
+# Create federated learning session with neural network
 ./parity-client fl create-session-with-data ./healthcare_data.csv \
   --name "Privacy-Preserving Diagnosis" \
   --model-type neural_network \
   --total-rounds 10 \
+  --privacy-level high
+
+# Create federated learning session with random forest
+./parity-client fl create-session-with-data ./iris_data.csv \
+  --name "Distributed Classification" \
+  --model-type random_forest \
+  --total-rounds 5 \
   --privacy-level high
 
 # Check your node reputation and earnings
